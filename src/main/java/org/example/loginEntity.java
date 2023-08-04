@@ -38,7 +38,7 @@ public class loginEntity {
     public boolean printOwner(String fName, String mName, String lName, String Phone, String owEmail, String age, String owUser, String owPass) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement2 = connection.createStatement();
-            String query2 = "insert into login (username, password, role) values ('"+owUser+"', '"+owPass+"', '"+owner+"')";statement2.executeUpdate(query2);Statement statement3 = connection.createStatement();String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('"+fName+"', '"+mName+"', '"+lName+"', '"+Phone + "', '"+owEmail+"', '"+age+"', '"+owUser+"', '"+owPass+"', '"+owner+"')";statement3.executeUpdate(query3);Owner = true; statement3.close(); statement2.close();} catch (SQLException e) {logger.info("An exception occurred: " + e.getMessage());}
+            String query2 = "insert into login (username, password, role) values ('"+owUser+"', '"+owPass+"', '"+owner+"')";statement2.executeUpdate(query2);Statement statement3 = connection.createStatement();String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('"+fName+"', '"+mName+"', '"+lName+"', '"+Phone + "', '"+owEmail+"', '"+age+"', '"+owUser+"', '"+owPass+"', '"+owner+"')";statement3.executeUpdate(query3);Owner = true; statement3.close(); statement2.close();} catch (SQLException e) {logger.info("An exception occurred : " + e.getMessage());}
         return Owner;
     }
 
