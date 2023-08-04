@@ -1,32 +1,27 @@
 package org.example;
 
 import java.sql.*;
-import static org.junit.Assert.*;
+
 
 public class loginEntity {
 
     boolean Owner = false;
     boolean reg = false;
     boolean Tenant = false;
-    boolean adminUsername, adminPassword,adminFlag;
     String host = "localhost";
     int port = 3306;
     String database = "Sakancom";
     String username = "root";
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
-    String tenant = "tenant";
     String owner = "owner";
 
-    String UserName, Password, Role;
-    String fName, mName, lName, Phone, owEmail, age, owUser, owPass;
-    String ffName, mmName, llName, PPhone, tenEmail, Age, Reg_num, major, tenUser, tenPass;
+    String Role;
+
     public  String checkValues(String UserName,String Password) {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
-            if (UserName.isEmpty() == true || Password.isEmpty() == true) {
-            } else {
                 int flag = 0;
                 String query = "SELECT * FROM login where username='"+UserName+"' and password='"+Password+"'";
                 ResultSet resultSet = statement.executeQuery(query);
@@ -37,7 +32,6 @@ public class loginEntity {
                 if (flag == 0) {
                     Role="null";
                 }return Role;
-            }
         } catch (Exception ex) {}
         return null;
     }

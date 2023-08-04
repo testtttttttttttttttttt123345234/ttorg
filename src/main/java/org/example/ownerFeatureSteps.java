@@ -3,7 +3,7 @@ package org.example;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.example.ownerEntity;
+
 
 import java.sql.SQLException;
 
@@ -20,7 +20,6 @@ public class ownerFeatureSteps {
     boolean loggedOut = false;
     boolean department = false;
     boolean photo = false;
-    boolean contactInfo = false;
     boolean services = false;
     boolean price = false;
     boolean locationInfo = false;
@@ -48,7 +47,7 @@ public class ownerFeatureSteps {
     @And("enters {string} as department name using function departmentName")
     public void entersAsDepartmentNameUsingFunctionDepartmentName(String string) {
         if (obj.departmentName(string)) {
-            department = true;assertTrue(true);} else assertFalse(true);
+            department = true;assertTrue(true);}
     }
     @Then("department added successfully for owner {string}")
     public void department_added_successfully_for_owner(String string) {assertTrue(department);}
