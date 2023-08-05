@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class adminEntity {
     String host = "localhost";
+    ///////
     int port = 3306;
     String database = "Sakancom";
     String username = "root";

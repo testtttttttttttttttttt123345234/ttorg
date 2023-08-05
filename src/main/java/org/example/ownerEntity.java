@@ -17,10 +17,9 @@ public class ownerEntity {
     String database = "Sakancom";
     String username = "root";
     String password = "password";
+    ////
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
-    String UserName,Password,Role;
-    String owner_username, description, services, price, balcony, numOfBathrooms, floors, residenceName;
-
+    String Role;
     public boolean addHousing(String ownerUsername) throws SQLException {
         //counter++;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {

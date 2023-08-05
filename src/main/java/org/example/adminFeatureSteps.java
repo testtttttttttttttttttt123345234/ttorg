@@ -13,6 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class adminFeatureSteps {
     boolean accepted = false;
     boolean rejected = false;
+    //////
     boolean loggedIn = true;
 
     boolean loggedOut = false;

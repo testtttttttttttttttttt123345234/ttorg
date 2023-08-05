@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
         monochrome = true, //readable output on console.
         snippets = SnippetType.CAMELCASE,
         glue = "org.example"
-)
+)//
 public class AcceptanceTest {
 
 }

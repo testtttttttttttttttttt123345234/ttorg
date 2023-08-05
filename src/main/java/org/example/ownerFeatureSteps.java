@@ -66,6 +66,7 @@ public class ownerFeatureSteps {
         if(obj.addPhoto(photoLink))
         {photo = true;
             assertTrue(true);} else assertFalse(true);
+        //
     }
     @Then("photo added successfully for owner {string}")
     public void photo_added_successfully_for_owner(String string) {
