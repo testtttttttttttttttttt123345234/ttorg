@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 public class ControlPanelFeature {
 
     ControlPanel obj=new ControlPanel();
+    boolean loggedIn = false;
+    boolean loggedOut = false;
 
     @Given("tenant choosed {string} to view control panel")
     public void tenantChoosedToViewControlPanelUsernameIs(String string) {
@@ -45,6 +47,19 @@ assertFalse(obj.isBooked(arg0));
     @Then("the control panel will not appear for tenant username {string}")
     public void theControlPanelWillNotAppearForTenantUsername(String arg0) throws SQLException {
      assertFalse(obj.displayControlPanel(arg0));
+    }
+    @Given("tenant is logged in")
+    public void tenantIsLoggedIn() {
+        assertTrue(loggedIn);
+    }
+    @Given("selected {string} from tenant dashboard")
+    public void selectedFromTenantDashboard(String string) {
+        assertTrue(string.equals("4"));
+        loggedOut = false;
+    }
+    @Then("tenant logged out successfully")
+    public void tenantLoggedOutSuccessfully() {
+        assertTrue(loggedOut);
     }
 
 
