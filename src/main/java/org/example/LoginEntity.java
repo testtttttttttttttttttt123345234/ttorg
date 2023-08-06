@@ -53,47 +53,36 @@ public class LoginEntity {
     }
 
     public boolean printOwner(String fName, String mName, String lName, String phone, String owEmail, String age, String owUser, String owPass) throws SQLException {
-        Statement statement3 = null;
-        Statement statement2 = null;
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
-            statement2 = connection.createStatement();
+            statement = connection.createStatement();
             String query2 = "insert into login (username, password, role) values ('" + owUser + "', '" + owPass + "', '" + owner + "')";
-            statement2.executeUpdate(query2);
-            statement3 = connection.createStatement();
+            statement.executeUpdate(query2);
             String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" + age + "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
-            statement3.executeUpdate(query3);
-            statement2.close();
-            statement3.close();
-            connection.close();
+            statement.executeUpdate(query3);
+            statement.close();
         } finally {
 
-            assert statement3 != null;
-
-            statement3.close();
-            statement2.close();
+            assert statement != null;
+            statement.close();
         }
         return true;
     }
 
     public boolean printTenant( String ffName, String mmName, String llName, String pPhone, String tenEmail, String age, String regNum, String major, String tenUser, String tenPass) throws SQLException {
 
-        Statement statement3 = null;
-        Statement statement4 = null;
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
-            statement3 = connection.createStatement();
+            statement = connection.createStatement();
             String query3 = "insert into login (username, password, role) values ('" + tenUser + "','" + tenPass + "', '" + tenant + "')";
-            statement3.executeUpdate(query3);
-            statement4 = connection.createStatement();
+            statement.executeUpdate(query3);
             String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" + age + "', '" + regNum + "', '" + major + "', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
-            statement4.executeUpdate(query4);
-            statement3.close();
-            statement4.close();
-            connection.close();
+            statement.executeUpdate(query4);
+            statement.close();
         } finally {
-            assert statement3 != null;
-            statement3.close();
-            assert statement4 != null;
-            statement4.close();
+            assert statement != null;
+            statement.close();
+
         }
         return true;
     }

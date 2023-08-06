@@ -46,7 +46,7 @@ public class OwnerFeatureSteps {
                 assertTrue(string3.equals("1") && string4.equals("1"));
     }
     @And("enters {string} as department name using function departmentName")
-    public void entersAsDepartmentNameUsingFunctionDepartmentName(String string) {
+    public void entersAsDepartmentNameUsingFunctionDepartmentName(String string) throws SQLException {
         if (obj.departmentName(string)) {
             department = true;assertTrue(true);}
     }
@@ -63,7 +63,7 @@ public class OwnerFeatureSteps {
         }
     }
     @And("adding to the housing options appears and owner added {string} by function addPhoto")
-    public void addingToTheHousingOptionsAppearsAndOwnerAddedPhotoByFunctionAddPhoto(String photoLink) {
+    public void addingToTheHousingOptionsAppearsAndOwnerAddedPhotoByFunctionAddPhoto(String photoLink) throws SQLException {
         if(obj.addPhoto(photoLink))
         {photo = true;
             assertTrue(true);} else assertFalse(true);
@@ -81,7 +81,7 @@ public class OwnerFeatureSteps {
     }
 
     @And("adding to the housing options appears and owner entered {string} as location and information by function addLocationInfo")
-    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsLocationAndInformationByFunctionAddLocationInfo(String string) {
+    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsLocationAndInformationByFunctionAddLocationInfo(String string) throws SQLException {
             locationInfo = true;assertTrue(obj.addLocationInfo(string));
     }
     @Then("location and information added successfully for owner {string}")
@@ -97,7 +97,7 @@ public class OwnerFeatureSteps {
             assertTrue(string3.equals("1")&&string4.equals("1"));
     }
     @And("adding to the housing options appears and owner entered {string} as services by function addServices")
-    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsServicesByFunctionAddServices(String string) {
+    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsServicesByFunctionAddServices(String string) throws SQLException {
             services = true;assertTrue(obj.addServices(string));
     }
     @Then("services added successfully for owner {string}")
@@ -113,7 +113,7 @@ public class OwnerFeatureSteps {
             assertTrue(string3.equals("1")&&string4.equals("1"));
     }
     @And("adding to the housing options appears and owner entered {string} as monthly rent by function addPrice")
-    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsMonthlyRentByFunctionAddPrice(String string) {
+    public void addingToTheHousingOptionsAppearsAndOwnerEnteredAsMonthlyRentByFunctionAddPrice(String string) throws SQLException {
             price = true;
             assertTrue(obj.addPrice(string));
     }
@@ -134,7 +134,7 @@ public class OwnerFeatureSteps {
             assertTrue(housing.equals("1")&&showHousings.equals("2"));
     }
     @Then("housings and contact information appears for owner {string}")
-    public void housingsAndContactInformationAppearsForOwner(String owner) {
+    public void housingsAndContactInformationAppearsForOwner(String owner) throws SQLException {
         assertTrue(obj.showHousings(owner));
     }
 

@@ -3,7 +3,6 @@ package org.example;
 import java.sql.*;
 
 import java.util.logging.*;
-import static org.junit.Assert.fail;
 
 public class OwnerEntity {
     private static final Logger logger = Logger.getLogger(OwnerEntity.class.getName());
@@ -15,54 +14,84 @@ public class OwnerEntity {
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String role;
+    private static final String id = "WHERE id";
+
     public boolean addHousing(String ownerUsername) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
+            statement = connection.createStatement();
             String query = "insert into housing (owner, id) values ('"+ownerUsername+"', '"+counter+"')";
-            statement.executeUpdate(query);}return true;
+            statement.executeUpdate(query);}
+        finally {
+            assert statement!=null;
+            statement.close();
+        }
+        return true;
     }
 
-    public boolean departmentName(String department){
+    public boolean departmentName(String department) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
+            statement = connection.createStatement();
             String query = "UPDATE housing SET departmentName = '"+department+"' WHERE id = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {throw new RuntimeException(e);}
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            assert statement!=null;
+            statement.close();
+        }
     }
 
-    public boolean addPhoto(String photo){
+    public boolean addPhoto(String photo) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET picture = '"+photo+"' WHERE id = '"+counter+"'";
+            statement = connection.createStatement();
+            String query = "UPDATE housing SET picture = '"+photo+"' +id+ = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {throw new RuntimeException(e);}
+        } finally {
+            assert statement!=null;
+            statement.close();
+        }
     }
 
-    public boolean addLocationInfo(String location){
+    public boolean addLocationInfo(String location) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET location = '"+location+"' WHERE id = '"+counter+"'";
+            statement = connection.createStatement();
+            String query = "UPDATE housing SET location = '"+location+"' +id+ = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {throw new RuntimeException(e);}
+        }finally {
+            assert statement!=null;
+            statement.close();
+        }
     }
-    public boolean addServices(String services){
+    public boolean addServices(String services) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET services = '"+services+"' WHERE id = '"+counter+"'";
+             statement = connection.createStatement();
+            String query = "UPDATE housing SET services = '"+services+"' +id+ = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {throw new RuntimeException(e);}
+        } finally {
+            assert statement!=null;
+            statement.close();
+        }
     }
-    public boolean addPrice(String price){
+    public boolean addPrice(String price) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
-            String query = "UPDATE housing SET price = '"+price+"' WHERE id = '"+counter+"'";
+            statement = connection.createStatement();
+            String query = "UPDATE housing SET price = '"+price+"' +id+ = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {throw new RuntimeException(e);}
+        }finally {
+            assert statement!=null;
+            statement.close();
+        }
     }
 
 
@@ -88,10 +117,10 @@ public class OwnerEntity {
         return role;
     }
 
-    public boolean showHousings(String owner)
-    {
+    public boolean showHousings(String owner) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)){
-            Statement statement = connection.createStatement();
+            statement = connection.createStatement();
             String query = "Select * from housing where owner = '"+owner+"'";
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
@@ -120,6 +149,10 @@ public class OwnerEntity {
                 logger.info(ownerEmail);
                 return true;
             }
-        } catch (SQLException e){throw new RuntimeException(e);}return false;
+        } finally {
+            assert statement!=null;
+            statement.close();
+        }
+    return false;
     }
 }
