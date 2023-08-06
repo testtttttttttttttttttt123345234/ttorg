@@ -16,7 +16,7 @@ public class loginEntity {
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String owner = "owner";
-    private static final String tenant= "tenent";
+    private static final String nameTenant= "tenant";
     String role;
 
     public  String checkValues(String UserName,String Password) {
@@ -28,7 +28,7 @@ public class loginEntity {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 flag = 1;
-                if (resultSet.getString(3).equalsIgnoreCase(tenant)) {role=tenant;} else if (resultSet.getString(3).equalsIgnoreCase("admin")) {role="admin";} else if (resultSet.getString(3).equalsIgnoreCase("owner")) {role="owner";}
+                if (resultSet.getString(3).equalsIgnoreCase(nameTenant)) {role=nameTenant;} else if (resultSet.getString(3).equalsIgnoreCase("admin")) {role="admin";} else if (resultSet.getString(3).equalsIgnoreCase("owner")) {role="owner";}
             }
             if (flag == 0) {
                 role="null";}return role;} catch (Exception ex) {logger.info(ex.getMessage());}
@@ -54,10 +54,10 @@ public class loginEntity {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement3 = connection.createStatement();
-            String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+tenant+"')";
+            String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+nameTenant+"')";
             statement3.executeUpdate(query3);
             Statement statement4 = connection.createStatement();
-            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('"+ffName+"', '"+mmName+"', '"+llName+"', '"+PPhone+"', '"+tenEmail+"', '"+Age+"', '"+Reg_num+"', '"+major+"', '"+tenUser+"','"+tenPass+"', '"+tenant+"')";
+            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('"+ffName+"', '"+mmName+"', '"+llName+"', '"+PPhone+"', '"+tenEmail+"', '"+Age+"', '"+Reg_num+"', '"+major+"', '"+tenUser+"','"+tenPass+"', '"+nameTenant+"')";
             statement4.executeUpdate(query4);
             Tenant = true;
             statement3.close();

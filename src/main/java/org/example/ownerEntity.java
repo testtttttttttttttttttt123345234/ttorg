@@ -7,21 +7,15 @@ import static org.junit.Assert.fail;
 
 public class ownerEntity {
     private static final Logger logger = Logger.getLogger(ownerEntity.class.getName());
-
-    boolean ownerFlag = false;
-    boolean ownerUsername = false;
-    boolean ownerPassword = false;
     String counter = "10";
     String host = "localhost";
     int port = 3306;
     String database = "Sakancom";
     String username = "root";
     String password = "password";
-    ////
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
-    String Role;
+    String role;
     public boolean addHousing(String ownerUsername) throws SQLException {
-        //counter++;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
             String query = "insert into housing (owner, id) values ('"+ownerUsername+"', '"+counter+"')";
@@ -75,19 +69,17 @@ public class ownerEntity {
     public  String checkValues(String UserName,String Password) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement = connection.createStatement();
-            if (UserName.isEmpty() == true || Password.isEmpty() == true) {
-            } else {
                 int flag = 0;
                 String query = "SELECT * FROM login where username='"+UserName+"' and password='"+Password+"'";
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
-                    if (resultSet.getString(3).equals("tenant")) {Role="tenant";} else if (resultSet.getString(3).equals("admin")) {Role="admin";} else if (resultSet.getString(3).equals("owner")) {Role="owner";} else {Role="null";}
+                    if (resultSet.getString(3).equals("tenant")) {role="tenant";} else if (resultSet.getString(3).equals("admin")) {role="admin";} else if (resultSet.getString(3).equals("owner")) {role="owner";} else {role="null";}
                 }
-                if (flag == 0) {Role="null";}
+                if (flag == 0) {role="null";}
             }
-        } catch (Exception ex) {}
-        return Role;
+         catch (Exception ignored) {}
+        return role;
     }
 
     public boolean showHousings(String owner)
@@ -97,20 +89,29 @@ public class ownerEntity {
             String query = "Select * from housing where owner = '"+owner+"'";
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
-                System.out.println("ID : " + resultSet.getString(8));
-                System.out.println("Picture : " + resultSet.getString(1));
-                System.out.println("Price : " + resultSet.getString(2));
-                System.out.println("Location : " + resultSet.getString(3));
-                System.out.println("Services : " + resultSet.getString(4));
-                System.out.println("Number of people lived in : " + resultSet.getString(11));
-                System.out.println("Floor Number: " + resultSet.getString(9));
-                System.out.println("Department Name : " + resultSet.getString(10)+"\n");
-                System.out.println("Owner information");
-                System.out.println("Owner name : " + resultSet.getString(1)+" ");
-                System.out.print(resultSet.getString(2)+" ");
-                System.out.print(resultSet.getString(3));
-                System.out.println("Owner email : " + resultSet.getString(6));
-                System.out.println("Owner Phone number : " + resultSet.getString(5));
+                String id = "ID : " + resultSet.getString(8)+"\n";
+                logger.info(id);
+                String price ="Price : " + resultSet.getString(2)+"\n";
+                logger.info(price);
+                String departmentName = "Department Name : " + resultSet.getString(10)+"\n\n";
+                logger.info(departmentName);
+                String picture = "Picture : " + resultSet.getString(1)+"\n";
+                logger.info(picture);
+                String services = "Services : " + resultSet.getString(4)+"\n";
+                logger.info(services);
+                String location = "Location : " + resultSet.getString(3)+"\n";
+                logger.info(location);
+                String numOfPeople = "Number of people lived in : " + resultSet.getString(11)+"\n";
+                logger.info(numOfPeople);
+                String floorNum = "Floor Number: " + resultSet.getString(9)+"\n";
+                logger.info(floorNum);
+                logger.info("Owner information\n");
+                String ownerName = "Owner name : " + resultSet.getString(1)+" "+resultSet.getString(2)+" "+resultSet.getString(3)+"\n";
+                logger.info(ownerName);
+                String ownerPhoneNumber = "Owner Phone number : " + resultSet.getString(5)+"\n";
+                logger.info(ownerPhoneNumber);
+                String ownerEmail = "Owner email : " + resultSet.getString(6)+"\n";
+                logger.info(ownerEmail);
                 return true;
             }
         } catch (SQLException e){throw new RuntimeException(e);}return false;
