@@ -9,14 +9,14 @@ import java.sql.SQLException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class adminFeatureSteps {
+public class AdminFeatureSteps {
     boolean accepted = false;
     boolean rejected = false;
     //////
     boolean loggedIn = true;
 
     boolean loggedOut = false;
-    public adminFeatureSteps(AdminEntity obj){
+    public AdminFeatureSteps(AdminEntity obj){
         super();
         this.obj = obj;
     }
@@ -56,8 +56,8 @@ public class adminFeatureSteps {
     }
     @Given("selected {string} from dashboard and see the pending housings")
     public void selectedFromDashboardAndSeeThePendingHousings(String string) throws SQLException {
-        if(string.equals("1"));
-        assertTrue(obj.pendingHousings());
+        if(string.equals("1"))
+            assertTrue(obj.pendingHousings());
     }
     @And("entered {string} to select pending housing and Selected {string} to accept the housing")
     public void enteredToSelectPendingHousingAndSelectedToAcceptTheHousing(String arg0, String arg1) throws SQLException {
@@ -79,8 +79,8 @@ public class adminFeatureSteps {
     public void adminIsLoggedInWithAnd(String string, String string2) throws SQLException {
         assertEquals("admin",obj.checkValues(string, string2));
     }
-    @Then("housing reservations appears using function showReservations with many database Queries to print all informations")
-    public void housingReservationsAppearsUsingFunctionShowReservationsWithManyDatabaseQueriesToPrintAllInformations() throws SQLException {
+    @Then("housing reservations appears using function showReservations with many database Queries to print all information")
+    public void housingReservationsAppearsUsingFunctionShowReservationsWithManyDatabaseQueriesToPrintAllInformation() throws SQLException{
         assertTrue(obj.showReservations());
     }
 

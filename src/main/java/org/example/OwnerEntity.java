@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.logging.*;
 import static org.junit.Assert.fail;
 
-public class ownerEntity {
-    private static final Logger logger = Logger.getLogger(ownerEntity.class.getName());
+public class OwnerEntity {
+    private static final Logger logger = Logger.getLogger(OwnerEntity.class.getName());
     String counter = "10";
     String host = "localhost";
     int port = 3306;

@@ -9,13 +9,13 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
-public class ownerFeatureSteps {
+public class OwnerFeatureSteps {
 
-    public ownerFeatureSteps(ownerEntity obj){
+    public OwnerFeatureSteps(OwnerEntity obj){
         super();
         this.obj = obj;
     }
-    ownerEntity obj;
+    OwnerEntity obj;
     boolean ownerFlag = true;
     boolean loggedOut = false;
     boolean department = false;
@@ -33,14 +33,14 @@ public class ownerFeatureSteps {
             assertEquals("owner", obj.checkValues(Username, Password));
     }
     @Then("owner logged in with {string} as username and {string} as a password and dashboard appears and adding list appears")
-    public void owner_logged_in_with_as_username_and_as_a_password_and_dashboard_appears_and_adding_list_appears(String Username, String Password) {
+    public void ownerLoggedInWithAsUsernameAndAsAPasswordAndDashboardAppearsAndAddingListAppears(String Username, String Password) {
         assertTrue(ownerFlag);
     }
 
 
 
     @Given("owner is logged in with username {string} and  password {string} and selected {string} for housing then selected {string} to add housing.")
-    public void owner_is_logged_in_with_username_and_password_and_selected_for_housing_then_selected_to_add_housing(String string, String string2, String string3, String string4) {
+    public void ownerIsLoggedInWithUsernameAndPasswordAndSelectedForHousingThenSelectedToAddHousing(String string, String string2, String string3, String string4) {
             if(ownerFlag)
                 assertTrue(string3.equals("1") && string4.equals("1"));
     }
@@ -50,12 +50,12 @@ public class ownerFeatureSteps {
             department = true;assertTrue(true);}
     }
     @Then("department added successfully for owner {string}")
-    public void department_added_successfully_for_owner(String string) {assertTrue(department);}
+    public void departmentAddedSuccessfullyForOwner(String string) {assertTrue(department);}
 
 
 
     @Given("owner is logged in with username {string} and  password {string} and selected {string} for housing then selected {string} for add housing")
-    public void owner_is_logged_in_with_username_and_password_and_selected_for_housing_then_selected_for_add_housing(String string, String string2, String string3, String string4) throws SQLException {
+    public void ownerIsLoggedInWithUsernameAndPasswordAndSelectedForHousingThenSelectedForAddHousing(String string, String string2, String string3, String string4) throws SQLException {
         if(ownerFlag) {
             assertTrue(string3.equals("1") && string4.equals("1"));
             obj.addHousing(string);
@@ -69,13 +69,13 @@ public class ownerFeatureSteps {
         //
     }
     @Then("photo added successfully for owner {string}")
-    public void photo_added_successfully_for_owner(String string) {
+    public void photoAddedSuccessfullyForOwner(String string) {
             assertTrue(photo);
     }
 
 
     @Given("owner is logged in with username {string} and  password {string} and selected {string} for housing and {string} for add housing")
-    public void owner_is_logged_in_with_username_and_password_and_selected_for_housing_and_for_add_housing(String string, String string2, String string3, String string4) {
+    public void ownerIsLoggedInWithUsernameAndPasswordAndSelectedForHousingAndForAddHousing(String string, String string2, String string3, String string4) {
         if(ownerFlag)
             assertTrue(string3.equals("1")&&string4.equals("1"));
     }
@@ -85,14 +85,14 @@ public class ownerFeatureSteps {
             locationInfo = true;assertTrue(obj.addLocationInfo(string));
     }
     @Then("location and information added successfully for owner {string}")
-    public void location_and_information_added_successfully_for_owner(String string) {
+    public void locationAndInformationAddedSuccessfullyForOwner(String string) {
         assertTrue(locationInfo);
     }
 
 
 
     @Given("owner is logged in with username {string} and  password {string} then selected {string} for housing and {string} for add housing")
-    public void owner_is_logged_in_with_username_and_password_then_selected_for_housing_and_for_add_housing(String string, String string2, String string3, String string4) {
+    public void ownerIsLoggedInWithUsernameAndPasswordThenSelectedForHousingAndForAddHousing(String string, String string2, String string3, String string4) {
         if(ownerFlag)
             assertTrue(string3.equals("1")&&string4.equals("1"));
     }
@@ -101,14 +101,14 @@ public class ownerFeatureSteps {
             services = true;assertTrue(obj.addServices(string));
     }
     @Then("services added successfully for owner {string}")
-    public void services_added_successfully_for_owner(String string) {
+    public void servicesAddedSuccessfullyForOwner(String string) {
             assertTrue(services);
     }
 
 
 
     @Given("owner is logged in with username {string},  password {string} and selected {string} for housing and {string} for add housing")
-    public void owner_is_logged_in_with_username_password_and_selected_for_housing_and_for_add_housing(String string, String string2, String string3, String string4) {
+    public void ownerIsLoggedInWithUsernamePasswordAndSelectedForHousingAndForAddHousing(String string, String string2, String string3, String string4) {
         if(ownerFlag)
             assertTrue(string3.equals("1")&&string4.equals("1"));
     }
@@ -118,41 +118,43 @@ public class ownerFeatureSteps {
             assertTrue(obj.addPrice(string));
     }
     @Then("monthly rent added successfully for owner {string}")
-    public void monthly_rent_added_successfully_for_owner(String string) {
+    public void monthlyRentAddedSuccessfullyForOwner(String string) {
             assertTrue(price);
     }
 
 
 
     @Given("owner logged in")
-    public void owner_logged_in() {
+    public void ownerLoggedIn() {
         assertTrue(ownerFlag);
     }
     @Given("dashboard appears then selected {string} for housing then selected {string} for show housings full information using two queries from database")
-    public void dashboard_appears_then_selected_for_housing_then_selected_for_show_housings_full_information_using_two_queries_from_database(String housing, String showHousings) {
+    public void dashboardAppearsThenSelectedForHousingThenSelectedForShowHousingsFullInformationUsingTwoQueriesFromDatabase(String housing, String showHousings) {
         if(ownerFlag)
             assertTrue(housing.equals("1")&&showHousings.equals("2"));
     }
     @Then("housings and contact information appears for owner {string}")
-    public void housings_and_contact_information_appears_for_owner(String owner) {
+    public void housingsAndContactInformationAppearsForOwner(String owner) {
         assertTrue(obj.showHousings(owner));
     }
 
 
 
     @Given("owner is logged in")
-    public void owner_is_logged_in() {
+    public void ownerIsLoggedIn() {
         assertTrue(ownerFlag);
     }
     @Given("selected {string} from the dashboard")
-    public void selected_from_the_dashboard(String logout) {
+    public void selectedFromTheDashboard(String logout) {
         if(ownerFlag&&logout.equals("2")){
             assertEquals("2", logout);
             loggedOut = true;
         }
     }
     @Then("owner logged out successfully")
-    public void owner_logged_out_successfully() {
+    public void ownerLoggedOutSuccessfully() {
         assertTrue(loggedOut);
     }
+
+
 }

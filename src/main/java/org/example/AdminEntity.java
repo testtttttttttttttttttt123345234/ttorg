@@ -17,7 +17,7 @@ public class AdminEntity {
     String housing;
     String tenant;
     String owner;
-    private static final String nameOwner = "owner";
+    private static final String STRING = "owner";
 
     public String checkValues(String userName, String passWord) throws SQLException {
             try(Connection connection = DriverManager.getConnection(url, username, password))
@@ -29,7 +29,7 @@ public class AdminEntity {
                 while (resultSet.next()) {
                     flag = 1;
                     if (resultSet.getString(3).equals("tenant")) {role = "tenant";
-                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(nameOwner)) {role = nameOwner;} else {role = "null";
+                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(STRING)) {role = STRING;} else {role = "null";
                     }
                 }
                 if (flag == 0) {role = "null";
@@ -47,7 +47,7 @@ public class AdminEntity {
         String query = "SELECT * FROM housing where accept = 'false'";
         ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-            String oPrint = "Owner : " +resultSet.getString(nameOwner)+"\n";
+            String oPrint = "Owner : " +resultSet.getString(STRING)+"\n";
             logger.info(oPrint);
             String idPrint = "ID : " + resultSet.getString(8)+"\n";
             logger.info(idPrint);
