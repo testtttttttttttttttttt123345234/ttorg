@@ -13,19 +13,23 @@ public class AdminEntity {
     String username = "root";
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
-    String  role, housing, tenant, owner;
+    String  role;
+    String housing;
+    String tenant;
+    String owner;
+    private static final String OWNER = "owner";
 
-    public String checkValues(String UserName, String Password) throws SQLException {
+    public String checkValues(String USERNAME, String PASSWORD) throws SQLException {
             try(Connection connection = DriverManager.getConnection(url, username, password))
             {
             Statement statement = connection.createStatement();
                 int flag = 0;
-                String query = "SELECT * FROM login where username='" + UserName + "' and password='" + Password + "'";
+                String query = "SELECT * FROM login where username='" + USERNAME + "' and password='" + PASSWORD + "'";
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
                     if (resultSet.getString(3).equals("tenant")) {role = "tenant";
-                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals("owner")) {role = "owner";} else {role = "null";
+                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(OWNER)) {role = OWNER;} else {role = "null";
                     }
                 }
                 if (flag == 0) {role = "null";
@@ -40,10 +44,10 @@ public class AdminEntity {
     {
         Connection connection = DriverManager.getConnection(url, username, password);
         Statement statement = connection.createStatement();
-        String Query = "SELECT * FROM housing where accept = 'false'";
-        ResultSet resultSet = statement.executeQuery(Query);
+        String query = "SELECT * FROM housing where accept = 'false'";
+        ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-            String oPrint = "Owner : " +resultSet.getString("owner")+"\n";
+            String oPrint = "Owner : " +resultSet.getString(OWNER)+"\n";
             logger.info(oPrint);
             String idPrint = "ID : " + resultSet.getString(8)+"\n";
             logger.info(idPrint);
@@ -64,12 +68,12 @@ public class AdminEntity {
             }return true;
     }
 
-    public boolean acceptRejectHousing(String id, String YN) throws SQLException {
+    public boolean acceptRejectHousing(String id, String yn) throws SQLException {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();
             String query;
             String t = "true";
-            if(YN.equals("Yes")) {
+            if(yn.equals("Yes")) {
                 query = "UPDATE housing SET accept = '"+t+"' WHERE id = '"+id+"'";
                 statement.executeUpdate(query);
             }else {
@@ -102,10 +106,10 @@ public class AdminEntity {
             while(resultSet3.next()) {
                 String tenName = "Name : " + resultSet3.getString(1) + " " + resultSet3.getString(2) + " " + resultSet3.getString(3)+"\n";
                 logger.info(tenName);
-                String PN = "Phone Number : " + resultSet3.getString(4)+"\n";
-                logger.info(PN);
-                String Email = "Email : " + resultSet3.getString(5)+"\n";
-                logger.info(Email);
+                String phoneNumber = "Phone Number : " + resultSet3.getString(4)+"\n";
+                logger.info(phoneNumber);
+                String email = "Email : " + resultSet3.getString(5)+"\n";
+                logger.info(email);
                 String age = "Age : " + resultSet3.getString(6)+"\n";
                 logger.info(age);
                 String regNum = "Registration Number : " + resultSet3.getString(7)+"\n";
@@ -129,16 +133,16 @@ public class AdminEntity {
             String query4 = "SELECT * from housing where id = '"+housing+"'";
             ResultSet resultSet4= statement.executeQuery(query4);
             while(resultSet4.next()) {
-                String ID = "ID : " + resultSet4.getString(8)+"\n";
-                logger.info(ID);
-                String Service = "Services : " + resultSet4.getString(4)+"\n";
-                logger.info(Service);
-                String PIC = "Picture : " + resultSet4.getString(1)+"\n";
-                logger.info(PIC);
+                String id = "ID : " + resultSet4.getString(8)+"\n";
+                logger.info(id);
+                String service = "Services : " + resultSet4.getString(4)+"\n";
+                logger.info(service);
+                String picture = "Picture : " + resultSet4.getString(1)+"\n";
+                logger.info(picture);
                 String loc = "Location : " + resultSet4.getString(3)+"\n";
                 logger.info(loc);
-                String Price = "Price : " + resultSet4.getString(2)+"\n";
-                logger.info(Price);
+                String price = "Price : " + resultSet4.getString(2)+"\n";
+                logger.info(price);
                 String numOfPeople = "Number of people lived in : " + resultSet4.getString(11)+"\n";
                 logger.info(numOfPeople);
                 String floorNum = "Floor Number: " + resultSet4.getString(9)+"\n";
