@@ -18,6 +18,7 @@ public class LoginEntity {
     String tenant="tenant";
     String role;
     String admin="admin";
+    private static final String AGE = "21";
 
     public  String checkValues(String userName,String password) throws SQLException {
 
@@ -49,13 +50,13 @@ public class LoginEntity {
         return role;
     }
 
-    public boolean printOwner(String fName, String mName, String lName, String phone, String owEmail, String age, String owUser, String owPass) throws SQLException {
+    public boolean printOwner(String fName, String mName, String lName, String phone, String owEmail, String owUser, String owPass) throws SQLException {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
             statement = connection.createStatement();
             String query2 = "insert into login (username, password, role) values ('" + owUser + "', '" + owPass + "', '" + owner + "')";
             statement.executeUpdate(query2);
-            String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" + age + "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
+            String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" +AGE+ "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
             statement.executeUpdate(query3);
             statement.close();
         } finally {
@@ -66,14 +67,13 @@ public class LoginEntity {
         return true;
     }
 
-    public boolean printTenant( String ffName, String mmName, String llName, String pPhone, String tenEmail, String age, String regNum, String major, String tenUser, String tenPass) throws SQLException {
-
-        Statement statement = null;
+    public boolean printTenant( String ffName, String mmName, String llName, String pPhone, String tenEmail, String tenUser, String tenPass) throws SQLException {
+        Statement statement = null;String mJor = "Computer Engineering";String rNum = "12028797";
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
             statement = connection.createStatement();
             String query3 = "insert into login (username, password, role) values ('" + tenUser + "','" + tenPass + "', '" + tenant + "')";
             statement.executeUpdate(query3);
-            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" + age + "', '" + regNum + "', '" + major + "', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
+            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" +AGE+ "', '" +rNum+ "', '"+mJor+"', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
             statement.executeUpdate(query4);
             statement.close();
         } finally {

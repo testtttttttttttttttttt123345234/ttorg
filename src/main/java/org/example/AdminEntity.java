@@ -21,14 +21,13 @@ public class AdminEntity {
     public String checkValues(String userName, String passWord) throws SQLException {
         Statement statement = null;
             try(Connection connection = DriverManager.getConnection(url, username, password))
-            {   statement = connection.createStatement();
-                int flag = 0;
+            {   statement = connection.createStatement();int flag = 0;
                 String query = "SELECT * FROM login where username='" + userName + "' and password='" + passWord + "'";
                 ResultSet resultSet = statement.executeQuery(query);
-                while (resultSet.next()) {
-                    flag = 1;
+                while (resultSet.next()) {flag = 1;
                     if (resultSet.getString(3).equals("tenant")) {role = "tenant";
-                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(STRING)) {role = STRING;} else {role = "null";}}if (flag == 0) {role = "null";}
+                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(STRING)) {role = STRING;} else {role = "null";}}
+                if (flag == 0) {role = "null";}
                 resultSet.close();statement.close();}finally {assert statement!=null;statement.close();}return role;}
 
     public boolean pendingHousings() throws SQLException {
@@ -39,22 +38,22 @@ public class AdminEntity {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 String oPrint = "Owner : " + resultSet.getString(STRING) + "\n";
-                logger.info(oPrint);
-                String idPrint = "ID : " + resultSet.getString(8) + "\n";
-                logger.info(idPrint);
                 String deName = "Department Name : " + resultSet.getString(10) + "\n";
-                logger.info(deName);
+                String idPrint = "ID : " + resultSet.getString(8) + "\n";
                 String nFloor = "number of floors: " + resultSet.getString(9) + "\n";
-                logger.info(nFloor);
                 String pic = "Picture : " + resultSet.getString(1) + "\n";
-                logger.info(pic);
                 String price = "Price : " + resultSet.getString(2) + "\n";
-                logger.info(price);
                 String location = "Location : " + resultSet.getString(3) + "\n";
-                logger.info(location);
                 String services = "Services : " + resultSet.getString(4) + "\n";
-                logger.info(services);
                 String accept = "Acceptance : " + resultSet.getString("accept") + "\n";
+                logger.info(oPrint);
+                logger.info(idPrint);
+                logger.info(deName);
+                logger.info(nFloor);
+                logger.info(pic);
+                logger.info(price);
+                logger.info(location);
+                logger.info(services);
                 logger.info(accept);
             }
             resultSet.close();
@@ -99,10 +98,10 @@ public class AdminEntity {
                 tenant = resultSet.getString("tenantUserName");
                 owner = resultSet.getString("Owner");
                 String hID = ("House ID : " + resultSet.getString("houseID")) + "\n";
-                logger.info(hID);
                 String tUser = "tenant : " + resultSet.getString("tenantUserName") + "\n";
-                logger.info(tUser);
                 String oUser = "Owner : " + resultSet.getString("Owner") + "\n";
+                logger.info(hID);
+                logger.info(tUser);
                 logger.info(oUser);
             }
             logger.info("Tenant information" + "\n");

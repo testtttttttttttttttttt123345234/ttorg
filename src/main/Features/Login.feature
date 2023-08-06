@@ -18,7 +18,8 @@
 
     Scenario: successful registration as a tenant or owner
         Given user wants to register as a tenant or owner
-        And first name  = "yaser", second name = "mohammed", lastname = "AbuAishe", Phone="0593220261", email = "yasermohammed@gmail.com", age ="21", OwUser = "yaser mohammed", OwPass = "11223344" for owner and first name  = "yaser", second name = "sameer", lastname = "AbuAishe", Phone="0593220261", email = "yaser@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "yaser sameer", tenPass = "1234" for tenant and both usernames is available and used two database queries
+        And first name  = "yaser", second name = "mohammed", lastname = "AbuAishe", Phone="0593220261", email = "yasermohammed@gmail.com", OwUser = "yaser mohammed", OwPass = "11223344" for owner and username is available and used two database queries
+        And first name  = "yaser", second name = "sameer", lastname = "AbuAishe", Phone="0593220261", email = "yaser@gmail.com", Reg_num = "12028797", major = "Computer Engineering", tenUser = "yaser sameer", tenPass = "1234" for tenant and username is available and used two database queries
         Then registration complete and the account is created with username"yaser mohammed" and password "11223344"
 
     Scenario: registration fail as a tenant or owner
