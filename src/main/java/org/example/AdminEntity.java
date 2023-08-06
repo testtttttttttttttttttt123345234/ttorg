@@ -1,7 +1,6 @@
 package org.example;
 
 import java.sql.*;
-import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 public class AdminEntity {
@@ -35,7 +34,6 @@ public class AdminEntity {
                 }
                 if (flag == 0) {role = "null";
                 }
-                connection.close();
                 resultSet.close();
                 statement.close();
     }finally {
@@ -73,7 +71,6 @@ public class AdminEntity {
                 String accept = "Acceptance : " + resultSet.getString("accept") + "\n";
                 logger.info(accept);
             }
-            connection.close();
             resultSet.close();
             statement.close();
         }finally {
@@ -96,7 +93,6 @@ public class AdminEntity {
                 } else {
                     return true;
                 }
-                connection.close();
                 statement.close();
             }finally {
                 assert statement!=null;
@@ -174,7 +170,6 @@ public class AdminEntity {
                 String end = "_____________________________________________" + "\n";
                 logger.info(end);
             }
-            connection.close();
             resultSet.close();
             resultSet2.close();
             resultSet3.close();

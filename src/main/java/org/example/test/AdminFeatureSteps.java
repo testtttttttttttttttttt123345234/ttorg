@@ -1,4 +1,4 @@
-package org.example.testCode;
+package org.example.test;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

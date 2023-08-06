@@ -66,9 +66,10 @@ public class OwnerEntity {
     }
 
 
-    public  String checkValues(String UserName,String Password) {
+    public  String checkValues(String UserName,String Password) throws SQLException {
+        Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            Statement statement = connection.createStatement();
+                statement = connection.createStatement();
                 int flag = 0;
                 String query = "SELECT * FROM login where username='"+UserName+"' and password='"+Password+"'";
                 ResultSet resultSet = statement.executeQuery(query);
@@ -77,8 +78,13 @@ public class OwnerEntity {
                     if (resultSet.getString(3).equals("tenant")) {role="tenant";} else if (resultSet.getString(3).equals("admin")) {role="admin";} else if (resultSet.getString(3).equals("owner")) {role="owner";} else {role="null";}
                 }
                 if (flag == 0) {role="null";}
+                resultSet.close();
+                statement.close();
             }
-         catch (Exception ignored) {}
+            finally {
+                        assert statement!=null;
+                        statement.close();
+                    }
         return role;
     }
 

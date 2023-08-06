@@ -62,6 +62,9 @@ public class LoginEntity {
             statement3 = connection.createStatement();
             String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" + age + "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
             statement3.executeUpdate(query3);
+            statement2.close();
+            statement3.close();
+            connection.close();
         } finally {
 
             assert statement3 != null;
@@ -85,10 +88,9 @@ public class LoginEntity {
             statement4.executeUpdate(query4);
             statement3.close();
             statement4.close();
+            connection.close();
         } finally {
-
             assert statement3 != null;
-
             statement3.close();
             assert statement4 != null;
             statement4.close();

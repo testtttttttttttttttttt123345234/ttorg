@@ -1,4 +1,4 @@
-package org.example.testCode;
+package org.example.test;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -29,7 +29,7 @@ public class OwnerFeatureSteps {
         assertTrue(true);
     }
     @Given("owner enters {string} as username and {string} as a password")
-    public void owner_enters_as_username_and_as_a_password(String Username, String Password){
+    public void owner_enters_as_username_and_as_a_password(String Username, String Password) throws SQLException {
             ownerFlag = true;
             assertEquals("owner", obj.checkValues(Username, Password));
     }
