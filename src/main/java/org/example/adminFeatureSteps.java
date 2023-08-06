@@ -3,7 +3,6 @@ package org.example;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.example.adminEntity;
 
 import java.sql.SQLException;
 
@@ -17,14 +16,14 @@ public class adminFeatureSteps {
     boolean loggedIn = true;
 
     boolean loggedOut = false;
-    public adminFeatureSteps(adminEntity obj){
+    public adminFeatureSteps(AdminEntity obj){
         super();
         this.obj = obj;
     }
 
-    adminEntity obj;
+    AdminEntity obj;
     @Given("admin logged in with {string} as username and {string} as password and dashboard appears")
-    public void admin_logged_in_with_as_username_and_as_password_and_dashboard_appears(String string, String string2) {
+    public void admin_logged_in_with_as_username_and_as_password_and_dashboard_appears(String string, String string2) throws SQLException {
         assertEquals("admin", obj.checkValues(string, string2));
     }
 
@@ -38,7 +37,7 @@ public class adminFeatureSteps {
     public void enteredToSelectPendingHousing(String arg0) {assertEquals("10",arg0);
     }
     @And("entered {string} to select pending housing then Selected {string} to accept the housing")
-    public void enteredToSelectPendingHousingThenSelectedToAcceptTheHousing(String arg0, String arg1) {
+    public void enteredToSelectPendingHousingThenSelectedToAcceptTheHousing(String arg0, String arg1) throws SQLException {
         if(arg0.equals("11")){
             accepted = true; assertTrue(obj.acceptRejectHousing(arg0, arg1));
         }
@@ -52,7 +51,7 @@ public class adminFeatureSteps {
 
 
     @Given("admin logged in with {string} as username and {string} as password then dashboard appears")
-    public void admin_logged_in_with_as_username_and_as_password_then_dashboard_appears(String string, String string2) {
+    public void admin_logged_in_with_as_username_and_as_password_then_dashboard_appears(String string, String string2) throws SQLException {
         assertEquals("admin", obj.checkValues(string, string2));
     }
     @Given("selected {string} from dashboard and see the pending housings")
@@ -61,7 +60,7 @@ public class adminFeatureSteps {
         assertTrue(obj.pendingHousings());
     }
     @And("entered {string} to select pending housing and Selected {string} to accept the housing")
-    public void enteredToSelectPendingHousingAndSelectedToAcceptTheHousing(String arg0, String arg1) {
+    public void enteredToSelectPendingHousingAndSelectedToAcceptTheHousing(String arg0, String arg1) throws SQLException {
         if(arg0.equals("12")){
             rejected = true;  assertTrue(obj.acceptRejectHousing(arg0, arg1));
         }
@@ -77,11 +76,11 @@ public class adminFeatureSteps {
         assertEquals("2", string);
     }
     @Given("admin is logged in with {string} and {string}")
-    public void admin_is_logged_in_with_and(String string, String string2) {
+    public void admin_is_logged_in_with_and(String string, String string2) throws SQLException {
         assertEquals("admin",obj.checkValues(string, string2));
     }
     @Then("housing reservations appears using function showReservations with many database Queries to print all informations")
-    public void housingReservationsAppearsUsingFunctionShowReservationsWithManyDatabaseQueriesToPrintAllInformations() {
+    public void housingReservationsAppearsUsingFunctionShowReservationsWithManyDatabaseQueriesToPrintAllInformations() throws SQLException {
         assertTrue(obj.showReservations());
     }
 

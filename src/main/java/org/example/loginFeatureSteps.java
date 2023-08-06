@@ -31,7 +31,7 @@ public class loginFeatureSteps {
         adminFlag = false;
         String Role=new String("admin");
         if(Role.equals(obj.checkValues(uname,pword))){
-        assertEquals("admin", Role.equals(obj.checkValues(uname,pword)));
+        assertEquals(true, Role.equals(obj.checkValues(uname,pword)));
         adminFlag = true;
         }
     }
