@@ -25,16 +25,16 @@ public class OwnerFeatureSteps {
     boolean price = false;
     boolean locationInfo = false;
     @Given("owner wants to login and add a residence")
-    public void owner_wants_to_login_and_add_a_residence(){
+    public void ownerWantsToLoginAndAddAResidence(){
         assertTrue(true);
     }
     @Given("owner enters {string} as username and {string} as a password")
-    public void owner_enters_as_username_and_as_a_password(String Username, String Password) throws SQLException {
+    public void ownerEntersAsUsernameAndAsAPassword(String userName, String passWord) throws SQLException {
             ownerFlag = true;
-            assertEquals("owner", obj.checkValues(Username, Password));
+            assertEquals("owner", obj.checkValues(userName, passWord));
     }
     @Then("owner logged in with {string} as username and {string} as a password and dashboard appears and adding list appears")
-    public void ownerLoggedInWithAsUsernameAndAsAPasswordAndDashboardAppearsAndAddingListAppears(String Username, String Password) {
+    public void ownerLoggedInWithAsUsernameAndAsAPasswordAndDashboardAppearsAndAddingListAppears(String userName, String passWord) {
         assertTrue(ownerFlag);
     }
 

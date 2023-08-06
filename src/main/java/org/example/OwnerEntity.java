@@ -93,12 +93,12 @@ public class OwnerEntity {
     }
 
 
-    public  String checkValues(String UserName,String Password) throws SQLException {
+    public  String checkValues(String userName,String passWord) throws SQLException {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
                 statement = connection.createStatement();
                 int flag = 0;
-                String query = "SELECT * FROM login where username='"+UserName+"' and password='"+Password+"'";
+                String query = "SELECT * FROM login where username='"+userName+"' and password='"+passWord+"'";
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;

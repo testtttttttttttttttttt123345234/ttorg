@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class AdminFeatureSteps {
     boolean accepted = false;
     boolean rejected = false;
-    //////
+    private static final String ADMIN = "admin";
     boolean loggedIn = true;
 
     boolean loggedOut = false;
@@ -25,12 +25,12 @@ public class AdminFeatureSteps {
     AdminEntity obj;
     @Given("admin logged in with {string} as username and {string} as password and dashboard appears")
     public void adminLoggedInWithAsUsernameAndAsPasswordAndDashboardAppears(String string, String string2) throws SQLException {
-        assertEquals("admin", obj.checkValues(string, string2));
+        assertEquals(ADMIN, obj.checkValues(string, string2));
     }
 
     @And("selected {string} from dashboard to see the pending housings using function pending housings")
     public void selectedFromDashboardToSeeThePendingHousingsUsingFunctionPendingHousings(String string) throws SQLException {
-        if(string.equals("1"));
+        if(string.equals("1"))
             assertTrue(obj.pendingHousings());
     }
 
@@ -45,7 +45,7 @@ public class AdminFeatureSteps {
     }
 
     @Then("housing accepted")
-    public void housing_accepted() {
+    public void housingAccepted() {
         assertTrue(accepted);
     }
 
@@ -53,7 +53,7 @@ public class AdminFeatureSteps {
 
     @Given("admin logged in with {string} as username and {string} as password then dashboard appears")
     public void adminLoggedInWithAsUsernameAndAsPasswordThenDashboardAppears(String string, String string2) throws SQLException {
-        assertEquals("admin", obj.checkValues(string, string2));
+        assertEquals(ADMIN, obj.checkValues(string, string2));
     }
     @Given("selected {string} from dashboard and see the pending housings")
     public void selectedFromDashboardAndSeeThePendingHousings(String string) throws SQLException {
@@ -67,7 +67,7 @@ public class AdminFeatureSteps {
         }
     }
     @Then("housing rejected")
-    public void housing_rejected() {assertTrue(rejected);}
+    public void housingRejected() {assertTrue(rejected);}
 
 
 
@@ -78,7 +78,7 @@ public class AdminFeatureSteps {
     }
     @Given("admin is logged in with {string} and {string}")
     public void adminIsLoggedInWithAnd(String string, String string2) throws SQLException {
-        assertEquals("admin",obj.checkValues(string, string2));
+        assertEquals(ADMIN,obj.checkValues(string, string2));
     }
     @Then("housing reservations appears using function showReservations with many database Queries to print all information")
     public void housingReservationsAppearsUsingFunctionShowReservationsWithManyDatabaseQueriesToPrintAllInformation() throws SQLException{
