@@ -1,8 +1,9 @@
-package org.example;
+package org.example.testCode;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.example.LoginEntity;
 
 import java.sql.SQLException;
 

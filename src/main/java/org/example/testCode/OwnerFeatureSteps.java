@@ -1,8 +1,9 @@
-package org.example;
+package org.example.testCode;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.example.OwnerEntity;
 
 
 import java.sql.SQLException;
@@ -66,7 +67,6 @@ public class OwnerFeatureSteps {
         if(obj.addPhoto(photoLink))
         {photo = true;
             assertTrue(true);} else assertFalse(true);
-        //
     }
     @Then("photo added successfully for owner {string}")
     public void photoAddedSuccessfullyForOwner(String string) {

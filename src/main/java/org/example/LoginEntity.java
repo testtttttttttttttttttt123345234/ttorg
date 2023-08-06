@@ -83,6 +83,8 @@ public class LoginEntity {
             statement4 = connection.createStatement();
             String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" + age + "', '" + regNum + "', '" + major + "', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
             statement4.executeUpdate(query4);
+            statement3.close();
+            statement4.close();
         } finally {
 
             assert statement3 != null;
