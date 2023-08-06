@@ -28,7 +28,8 @@ public class AdminEntity {
                     if (resultSet.getString(3).equals("tenant")) {role = "tenant";
                     } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(STRING)) {role = STRING;} else {role = "null";}}
                 if (flag == 0) {role = "null";}
-                resultSet.close();statement.close();}finally {assert statement!=null;statement.close();}return role;}
+                resultSet.close();statement.close();}
+            finally {assert statement!=null;statement.close();}return role;}
 
     public boolean pendingHousings() throws SQLException {
         Statement statement = null;
@@ -58,9 +59,7 @@ public class AdminEntity {
             }
             resultSet.close();
             statement.close();
-        }finally {
-            assert statement!=null;
-            statement.close();
+        }finally {assert statement!=null;statement.close();
         }
             return true;
 
@@ -79,10 +78,7 @@ public class AdminEntity {
                     return true;
                 }
                 statement.close();
-            }finally {
-                assert statement!=null;
-                statement.close();
-            }
+            }finally {assert statement!=null;statement.close();}
             return true;
     }
 
@@ -162,10 +158,6 @@ public class AdminEntity {
             statement.close();
             return true;
 
-        }finally {
-            assert statement!=null;
-            statement.close();
-        }
+        }finally {assert statement!=null;statement.close();}
     }
-
 }

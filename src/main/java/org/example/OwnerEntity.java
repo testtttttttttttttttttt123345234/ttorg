@@ -12,9 +12,9 @@ public class OwnerEntity {
     String database = "Sakancom";
     String username = "root";
     String password = "password";
-    String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String role;
     private static final String OWNER = "WHERE id";
+    String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
 
     public boolean addHousing(String ownerUsername) throws SQLException {
         Statement statement = null;
