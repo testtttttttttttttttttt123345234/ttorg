@@ -102,8 +102,11 @@ public class OwnerEntity {
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
-                    if (resultSet.getString(3).equals("tenant")) {role="tenant";} else if (resultSet.getString(3).equals("admin")) {role="admin";} else if (resultSet.getString(3).equals("owner")) {role="owner";} else {role="null";}
-                }if (flag == 0) {role="null";}resultSet.close();statement.close();}finally {assert statement!=null;statement.close();}
+                    if (resultSet.getString(3).equals("tenant")) {role="tenant";}
+                    else if (resultSet.getString(3).equals("admin")) {role="admin";}
+                    else if (resultSet.getString(3).equals("owner")) {role="owner";} else {role="null";}
+                }if (flag == 0) {role="null";}
+                resultSet.close();statement.close();}finally {assert statement!=null;statement.close();}
         return role;
     }
 

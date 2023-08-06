@@ -68,7 +68,8 @@ public class LoginEntity {
     }
 
     public boolean printTenant( String ffName, String mmName, String llName, String pPhone, String tenEmail, String tenUser, String tenPass) throws SQLException {
-        Statement statement = null;String mJor = "Computer Engineering";String rNum = "12028797";
+        Statement statement = null;
+        String mJor = "Computer Engineering";String rNum = "12028797";
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
             statement = connection.createStatement();
             String query3 = "insert into login (username, password, role) values ('" + tenUser + "','" + tenPass + "', '" + tenant + "')";

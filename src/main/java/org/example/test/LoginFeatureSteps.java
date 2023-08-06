@@ -86,7 +86,7 @@ public class LoginFeatureSteps {
         assertTrue(true);
     }
     @And("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and username is available and used two database queries")
-    public void firstNameSecondNameLastnamePhoneEmailReg_numMajorTenUserTenPassForTenantAndUsernameIsAvailableAndUsedTwoDatabaseQueries(String ffname, String mMname, String lLname, String pPhone, String tenmail, String tenUser, String tenPass) throws SQLException {
+    public void firstNameSecondNameLastnamePhoneEmailRegNumMajorTenUserTenPassForTenantAndUsernameIsAvailableAndUsedTwoDatabaseQueries(String ffname, String mMname, String lLname, String pPhone, String tenmail, String tenUser, String tenPass) throws SQLException {
         obj.printTenant(ffname, mMname, lLname, pPhone, tenmail,tenUser, tenPass);
     }
     @And("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, OwUser = {string}, OwPass = {string} for owner and username is available and used two database queries")
