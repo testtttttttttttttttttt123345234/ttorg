@@ -14,7 +14,7 @@ public class OwnerEntity {
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String role;
-    private static final String owner = "WHERE id";
+    private static final String OWNER = "WHERE id";
 
     public boolean addHousing(String ownerUsername) throws SQLException {
         Statement statement = null;
@@ -33,11 +33,9 @@ public class OwnerEntity {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             statement = connection.createStatement();
-            String query = "UPDATE housing SET departmentName = '"+department+"' "+owner+" = '"+counter+"'";
+            String query = "UPDATE housing SET departmentName = '"+department+"' "+ OWNER +" = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         } finally {
             assert statement!=null;
             statement.close();
@@ -48,7 +46,7 @@ public class OwnerEntity {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             statement = connection.createStatement();
-            String query = "UPDATE housing SET picture = '"+photo+"' "+owner+" = '"+counter+"'";
+            String query = "UPDATE housing SET picture = '"+photo+"' "+ OWNER +" = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
         } finally {
@@ -61,7 +59,7 @@ public class OwnerEntity {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             statement = connection.createStatement();
-            String query = "UPDATE housing SET location = '"+location+"' "+owner+" = '"+counter+"'";
+            String query = "UPDATE housing SET location = '"+location+"' "+ OWNER +" = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
         }finally {
@@ -73,7 +71,7 @@ public class OwnerEntity {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
              statement = connection.createStatement();
-            String query = "UPDATE housing SET services = '"+services+"' "+owner+" = '"+counter+"'";
+            String query = "UPDATE housing SET services = '"+services+"' "+ OWNER +" = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
         } finally {
@@ -85,7 +83,7 @@ public class OwnerEntity {
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             statement = connection.createStatement();
-            String query = "UPDATE housing SET price = '"+price+"' "+owner+" = '"+counter+"'";
+            String query = "UPDATE housing SET price = '"+price+"' "+ OWNER +" = '"+counter+"'";
             statement.executeUpdate(query);
             return true;
         }finally {
@@ -105,15 +103,7 @@ public class OwnerEntity {
                 while (resultSet.next()) {
                     flag = 1;
                     if (resultSet.getString(3).equals("tenant")) {role="tenant";} else if (resultSet.getString(3).equals("admin")) {role="admin";} else if (resultSet.getString(3).equals("owner")) {role="owner";} else {role="null";}
-                }
-                if (flag == 0) {role="null";}
-                resultSet.close();
-                statement.close();
-            }
-            finally {
-                        assert statement!=null;
-                        statement.close();
-                    }
+                }if (flag == 0) {role="null";}resultSet.close();statement.close();}finally {assert statement!=null;statement.close();}
         return role;
     }
 

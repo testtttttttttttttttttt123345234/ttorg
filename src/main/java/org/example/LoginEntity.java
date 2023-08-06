@@ -14,11 +14,8 @@ public class LoginEntity {
     String username1 = "root";
     String password1 = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
-
     String owner = "owner";
     String tenant="tenant";
-    String userName;
-    String password;
     String role;
     String admin="admin";
 
