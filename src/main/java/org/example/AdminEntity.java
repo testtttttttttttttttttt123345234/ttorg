@@ -17,19 +17,19 @@ public class AdminEntity {
     String housing;
     String tenant;
     String owner;
-    private static final String OWNER = "owner";
+    private static final String name = "owner";
 
-    public String checkValues(String USERNAME, String PASSWORD) throws SQLException {
+    public String checkValues(String userName, String passWord) throws SQLException {
             try(Connection connection = DriverManager.getConnection(url, username, password))
             {
             Statement statement = connection.createStatement();
                 int flag = 0;
-                String query = "SELECT * FROM login where username='" + USERNAME + "' and password='" + PASSWORD + "'";
+                String query = "SELECT * FROM login where username='" + userName + "' and password='" + passWord + "'";
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     flag = 1;
                     if (resultSet.getString(3).equals("tenant")) {role = "tenant";
-                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(OWNER)) {role = OWNER;} else {role = "null";
+                    } else if (resultSet.getString(3).equals("admin")) {role = "admin";} else if (resultSet.getString(3).equals(name)) {role = name;} else {role = "null";
                     }
                 }
                 if (flag == 0) {role = "null";
@@ -47,7 +47,7 @@ public class AdminEntity {
         String query = "SELECT * FROM housing where accept = 'false'";
         ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-            String oPrint = "Owner : " +resultSet.getString(OWNER)+"\n";
+            String oPrint = "Owner : " +resultSet.getString(name)+"\n";
             logger.info(oPrint);
             String idPrint = "ID : " + resultSet.getString(8)+"\n";
             logger.info(idPrint);

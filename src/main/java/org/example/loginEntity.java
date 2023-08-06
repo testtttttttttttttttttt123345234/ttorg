@@ -16,8 +16,7 @@ public class loginEntity {
     String password = "password";
     String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
     String owner = "owner";
-    private static final String ten= "tenent";
-    private static final String exption_occ ="An exception occurred:";
+    private static final String tenant= "tenent";
     String role;
 
     public  String checkValues(String UserName,String Password) {
@@ -29,10 +28,10 @@ public class loginEntity {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 flag = 1;
-                if (resultSet.getString(3).equalsIgnoreCase(ten)) {role=ten;} else if (resultSet.getString(3).equalsIgnoreCase("admin")) {role="admin";} else if (resultSet.getString(3).equalsIgnoreCase("owner")) {role="owner";}
+                if (resultSet.getString(3).equalsIgnoreCase(tenant)) {role=tenant;} else if (resultSet.getString(3).equalsIgnoreCase("admin")) {role="admin";} else if (resultSet.getString(3).equalsIgnoreCase("owner")) {role="owner";}
             }
             if (flag == 0) {
-                role="null";}return role;} catch (Exception ex) { logger.info("exption_occ " + ex.getMessage());}
+                role="null";}return role;} catch (Exception ex) {logger.info(ex.getMessage());}
         return null;
     }
 
@@ -47,7 +46,7 @@ public class loginEntity {
             Owner = true;
             statement3.close();
             statement2.close();
-        } catch (SQLException e) {logger.info("exption_occ " + e.getMessage());}
+        } catch (SQLException e) {logger.info(e.getMessage());}
         return Owner;
     }
 
@@ -55,15 +54,15 @@ public class loginEntity {
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             Statement statement3 = connection.createStatement();
-            String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+ten+"')";
+            String query3 = "insert into login (username, password, role) values ('"+tenUser+"','"+tenPass+"', '"+tenant+"')";
             statement3.executeUpdate(query3);
             Statement statement4 = connection.createStatement();
-            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('"+ffName+"', '"+mmName+"', '"+llName+"', '"+PPhone+"', '"+tenEmail+"', '"+Age+"', '"+Reg_num+"', '"+major+"', '"+tenUser+"','"+tenPass+"', '"+ten+"')";
+            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('"+ffName+"', '"+mmName+"', '"+llName+"', '"+PPhone+"', '"+tenEmail+"', '"+Age+"', '"+Reg_num+"', '"+major+"', '"+tenUser+"','"+tenPass+"', '"+tenant+"')";
             statement4.executeUpdate(query4);
             Tenant = true;
             statement3.close();
             statement4.close();
-        } catch (SQLException e) {logger.info("exption_occ " + e.getMessage());}
+        } catch (SQLException e) {logger.info(e.getMessage());}
         return Tenant;
     }
 
@@ -76,7 +75,7 @@ public class loginEntity {
             if (resultSet.next()) {
                 reg = true;
             }
-        } catch (SQLException e){logger.info("exption_occ " + e.getMessage());
+        } catch (SQLException e){logger.info(e.getMessage());
         }
         return reg;
     }

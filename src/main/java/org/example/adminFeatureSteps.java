@@ -23,7 +23,7 @@ public class adminFeatureSteps {
 
     AdminEntity obj;
     @Given("admin logged in with {string} as username and {string} as password and dashboard appears")
-    public void admin_logged_in_with_as_username_and_as_password_and_dashboard_appears(String string, String string2) throws SQLException {
+    public void adminLoggedInWithAsUsernameAndAsPasswordAndDashboardAppears(String string, String string2) throws SQLException {
         assertEquals("admin", obj.checkValues(string, string2));
     }
 
@@ -51,11 +51,11 @@ public class adminFeatureSteps {
 
 
     @Given("admin logged in with {string} as username and {string} as password then dashboard appears")
-    public void admin_logged_in_with_as_username_and_as_password_then_dashboard_appears(String string, String string2) throws SQLException {
+    public void adminLoggedInWithAsUsernameAndAsPasswordThenDashboardAppears(String string, String string2) throws SQLException {
         assertEquals("admin", obj.checkValues(string, string2));
     }
     @Given("selected {string} from dashboard and see the pending housings")
-    public void selected_from_dashboard_and_see_the_pending_housings(String string) throws SQLException {
+    public void selectedFromDashboardAndSeeThePendingHousings(String string) throws SQLException {
         if(string.equals("1"));
         assertTrue(obj.pendingHousings());
     }
@@ -72,11 +72,11 @@ public class adminFeatureSteps {
 
 
     @Given("admin pressed {string} to show housing reservations")
-    public void admin_pressed_to_show_housing_reservations(String string) {
+    public void adminPressedToShowHousingReservations(String string) {
         assertEquals("2", string);
     }
     @Given("admin is logged in with {string} and {string}")
-    public void admin_is_logged_in_with_and(String string, String string2) throws SQLException {
+    public void adminIsLoggedInWithAnd(String string, String string2) throws SQLException {
         assertEquals("admin",obj.checkValues(string, string2));
     }
     @Then("housing reservations appears using function showReservations with many database Queries to print all informations")
