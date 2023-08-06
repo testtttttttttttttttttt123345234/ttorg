@@ -1,4 +1,4 @@
-package productioncode;
+package org.example;
 
 import java.sql.*;
 import java.util.logging.Logger;

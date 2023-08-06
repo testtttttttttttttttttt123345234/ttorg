@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="bad smells finished1" />
+    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/OwnerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/OwnerEntity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +108,7 @@
       <workItem from="1691309972746" duration="6372000" />
       <workItem from="1691346266298" duration="10405000" />
       <workItem from="1691360692278" duration="2024000" />
+      <workItem from="1691362744042" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1691166436997</created>
@@ -268,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691361319885</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Full project">
+      <created>1691362839762</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1691362839762</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +316,8 @@
     <MESSAGE value="bad smells" />
     <MESSAGE value="bad smells finished" />
     <MESSAGE value="bad smells finished1" />
-    <option name="LAST_COMMIT_MESSAGE" value="bad smells finished1" />
+    <MESSAGE value="Full project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full project" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/untitled4$All_in_untitled4.ic" NAME="All in untitled4 Coverage Results" MODIFIED="1691357096887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
