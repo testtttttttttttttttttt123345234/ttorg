@@ -23,5 +23,5 @@
 
     Scenario: registration fail as a tenant or owner
       Given user wants to signup as a tenant or owner
-      And first name  = "yaser", second name = "mohammed", lastname = "AbuAishe", Phone="0593220261", email = "yasermohammed@gmail.com", age ="21", OwUser = "yaser mohammed", OwPass = "11223344" for owner and first name  = "yaser", second name = "sameer", lastname = "AbuAishe", Phone="0593220261", email = "yaser@gmail.com", age ="21", Reg_num = "12028797", major = "Computer Engineering", tenUser = "yaser sameer", tenPass = "1234" for tenant and usernames isn't available
+      And tenUser = "yaser sameer", tenPass = "1234" for tenant and usernames isn't available
       Then registration fails the account with username"yaser mohammed" and password "11223344" isn't created

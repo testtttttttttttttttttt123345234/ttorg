@@ -62,6 +62,7 @@ public class LoginFeatureSteps {
     public void tenantOrOwnerLoginToTheSystem() {
         tenantFlag = false;
         ownerFlag = false;
+        assertTrue(true);
     }
     @Given("enters {string} as a username and {string} as a password and one of them are wrong")
     public void entersAsAUsernameAndAsAPasswordAndOneOfThemAreWrong(String username, String password) throws SQLException {
@@ -77,12 +78,17 @@ public class LoginFeatureSteps {
     public void errorAppears() {
         assertTrue("error",true);
     }
+
+
+
     @Given("user wants to register as a tenant or owner")
     public void userWantsToRegisterAsATenantOrOwner() {
         assertTrue(true);
     }
     @And("first name  = {string}, second name = {string}, lastname = {string}, phone={string}, email = {string}, age ={string}, owUser = {string}, owPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, phone={string}, email = {string}, age ={string}, regNum = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and both usernames is available and used two database queries")
-    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeReg_numMajorTenUserTenPassForTenantAndBothUsernamesIsAvailableAndUsedTwoDatabaseQueries(String fname, String mname, String lname, String phone, String owemail, String age, String owUser, String owPass, String ffname, String mMname, String lLname, String pPhone, String tenmail, String age1, String regNum, String major, String tenUser, String tenPass) throws SQLException {
+
+    @And("first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, OwUser = {string}, OwPass = {string} for owner and first name  = {string}, second name = {string}, lastname = {string}, Phone={string}, email = {string}, age ={string}, Reg_num = {string}, major = {string}, tenUser = {string}, tenPass = {string} for tenant and both usernames is available and used two database queries")
+    public void firstNameSecondNameLastnamePhoneEmailAgeOwUserOwPassForOwnerAndFirstNameSecondNameLastnamePhoneEmailAgeRegNumMajorTenUserTenPassForTenantAndBothUsernamesIsAvailableAndUsedTwoDatabaseQueriesString (String fname, String mname, String lname, String phone, String owemail, String age, String owUser, String owPass, String ffname, String mMname, String lLname, String pPhone, String tenmail, String age1, String regNum, String major, String tenUser, String tenPass) throws SQLException {
         obj.printTenant(ffname, mMname, lLname, pPhone, tenmail, age1, regNum, major, tenUser, tenPass);
         obj.printOwner(fname, mname, lname, phone, owemail, age, owUser, owPass);
     }
@@ -95,18 +101,15 @@ public class LoginFeatureSteps {
     {
         assertTrue(true);
     }
-
+    @And("tenUser = {string}, tenPass = {string} for tenant and usernames isn't available")
+    public void tenUserTenPassForTenantAndUsernamesIsnTAvailable(String arg0, String arg1) throws SQLException {
+        assertTrue(obj.failureReg(arg0, arg1));
+    }
     @Then("registration fails the account with username{string} and password {string} isn't created")
     public void registrationFailsTheAccountWithUsernameAndPasswordIsnTCreated(String username, String password) throws SQLException {
         if(tenant.equals(obj.checkValues(username, password))||owner.equals(obj.checkValues(username, password)))
         {
             assertTrue(tenant.equals(obj.checkValues(username, password))||owner.equals(obj.checkValues(username, password)));
         }
-    }
-
-
-    @And("tenUser = {string}, tenPass = {string} for tenant and usernames isn't available")
-    public void tenuserTenPassForTenantAndUsernamesIsnTAvailable(String arg0, String arg1) throws SQLException {
-        assertTrue(obj.failureReg(arg0, arg1));
     }
 }
