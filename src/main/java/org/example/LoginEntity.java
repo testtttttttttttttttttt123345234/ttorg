@@ -22,7 +22,7 @@ public class LoginEntity {
     String passWord;
     String mJor = "Computer Engineering";
     String rNum = "12028797";
-    String AGE = "21";
+    String age = "21";
 
     public  String checkValues(String userName,String password) throws SQLException {
 
@@ -57,7 +57,7 @@ public class LoginEntity {
             statement = connection.createStatement();
             String query2 = "insert into login (username, password, role) values ('" + owUser + "', '" + owPass + "', '" + owner + "')";
             statement.executeUpdate(query2);
-            String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" +AGE+ "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
+            String query3 = "insert into owner (first_name, second_name, last_name, phonenumber, email, age, username, password, role) values ('" + fName + "', '" + mName + "', '" + lName + "', '" + phone + "', '" + owEmail + "', '" + age + "', '" + owUser + "', '" + owPass + "', '" + owner + "')";
             statement.executeUpdate(query3);
             statement.close();
         } finally {
@@ -74,7 +74,7 @@ public class LoginEntity {
             statement = connection.createStatement();
             String query3 = "insert into login (username, password, role) values ('" + tenUser + "','" + tenPass + "', '" + tenant + "')";
             statement.executeUpdate(query3);
-            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" +AGE+ "', '" +rNum+ "', '"+mJor+"', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
+            String query4 = "insert into tenant (first_name, second_name, last_name, phonenumber, email, age, reg_num, major, username, password, role) values ('" + ffName + "', '" + mmName + "', '" + llName + "', '" + pPhone + "', '" + tenEmail + "', '" + age + "', '" +rNum+ "', '"+mJor+"', '" + tenUser + "','" + tenPass + "', '" + tenant + "')";
             statement.executeUpdate(query4);
             statement.close();
         } finally {assert statement != null;statement.close();

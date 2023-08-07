@@ -4,28 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project">
+    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project v1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Furniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Furniture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HousingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HousingEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sakancomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/BookingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/BookingFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/ControlPanelFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/ControlPanelFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/FurnitureFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/FurnitureFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/HousingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/HousingFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/ShowLivedInFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/ShowLivedInFeature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/LoginEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LoginEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/BookingFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/BookingFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/ControlPanelFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/ControlPanelFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/FurnitureFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/FurnitureFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/HousingFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/HousingFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/ShowLivedInFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/ShowLivedInFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/ControlPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/Furniture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/HousingEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/ShowLivedIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sakancomApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +110,7 @@
       <workItem from="1691309972746" duration="6372000" />
       <workItem from="1691346266298" duration="10405000" />
       <workItem from="1691360692278" duration="2024000" />
-      <workItem from="1691362744042" duration="4504000" />
+      <workItem from="1691362744042" duration="4939000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1691166436997</created>
@@ -305,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691363217821</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Full project v1">
+      <created>1691390642740</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1691390642740</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +333,8 @@
     <MESSAGE value="bad smells finished" />
     <MESSAGE value="bad smells finished1" />
     <MESSAGE value="Full project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full project" />
+    <MESSAGE value="Full project v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full project v1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/untitled4$All_in_untitled4.ic" NAME="All in untitled4 Coverage Results" MODIFIED="1691357096887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
