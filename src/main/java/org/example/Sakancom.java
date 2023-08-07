@@ -4,10 +4,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class sakancomapplication {
-    private static final Logger logger = Logger.getLogger(sakancomapplication.class.getName());
+public class Sakancom {
+    private static final Logger logger = Logger.getLogger(Sakancom.class.getName());
 
-    private static final String value = "The Value:";
+    private static final String VALUE = "The Value:";
     public static void main(String[] args) throws SQLException {
         String line="_____________________________________________"+"\n";
         while(true){
@@ -15,7 +15,7 @@ public class sakancomapplication {
             logger.info("Choose from the following "+"\n");
             logger.info("1-Login"+"\n");
             logger.info("2-Signup"+"\n");
-            logger.info(value);
+            logger.info(VALUE);
             Scanner input = new Scanner(System.in);
             int loginOrSignUp = 0;
             loginOrSignUp = input.nextInt();
@@ -40,7 +40,7 @@ public class sakancomapplication {
                         logger.info("2-Furniture"+"\n");
                         logger.info("3-Control Panel"+"\n");
                         logger.info("4-Logout"+"\n");
-                        logger.info(value);
+                        logger.info(VALUE);
                         Scanner input2 = new Scanner(System.in);
                         int choose = input2.nextInt();
                         logger.info(line);
@@ -67,7 +67,7 @@ public class sakancomapplication {
                                 logger.info("2-Add Furniture's"+"\n");
                                 logger.info("3-Sell Furniture's"+"\n");
                                 logger.info("4-Back"+"\n");
-                                logger.info(value);
+                                logger.info(VALUE);
                                 Scanner inp = new Scanner(System.in);
                                 int ch = inp.nextInt();
                                 logger.info(line);
@@ -112,7 +112,7 @@ public class sakancomapplication {
                     logger.info("Choose from the following "+"\n");
                     logger.info("1-Housing "+"\n");
                     logger.info("2-Logout "+"\n");
-                    logger.info(value);
+                    logger.info(VALUE);
                     Scanner i = new Scanner(System.in);
                     int inp = i.nextInt();
                     if (inp == 1) {
@@ -122,7 +122,7 @@ public class sakancomapplication {
                             logger.info("1-Add Housing "+"\n");
                             logger.info("2-Show Housings "+"\n");
                             logger.info("3-Logout "+"\n");
-                            logger.info(value);
+                            logger.info(VALUE);
                             Scanner inp1 = new Scanner(System.in);
                             int input2 = inp1.nextInt();
                             if (input2 == 1) {
@@ -131,7 +131,8 @@ public class sakancomapplication {
                                 logger.info("Enter Housing ID: ");
                                 obj.counter = inp3.nextLine();
                                 logger.info("\nEnter Owner username: ");
-                                logger.info(in.userName+"\n");
+                                logger.info(in.userName);
+                                logger.info("\n");
                                 obj.addHousing(in.userName);
                                 logger.info("Enter Department name: ");
                                 String depName = inp3.nextLine();
@@ -181,7 +182,7 @@ public class sakancomapplication {
                     logger.info("1-See pending Housings \n");
                     logger.info("2-See Reservations \n");
                     logger.info("3-Logout \n");
-                    logger.info(value);
+                    logger.info(VALUE);
                     Scanner inp1 = new Scanner(System.in);
                     int input2 = inp1.nextInt();
                     if (input2 == 1) {
@@ -220,7 +221,7 @@ public class sakancomapplication {
                 logger.info("Choose from the following \n");
                 logger.info("1-Owner\n");
                 logger.info("2-Tenant\n");
-                logger.info(value);
+                logger.info(VALUE);
                 Scanner in = new Scanner(System.in);
                 int inp = in.nextInt();
                 if(inp == 1) {
