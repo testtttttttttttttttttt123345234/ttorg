@@ -18,7 +18,11 @@ public class LoginEntity {
     String owner = "owner";
     String tenant="tenant";
     String admin="admin";
-    private static final String AGE = "21";
+    String userName;
+    String passWord;
+    String mJor = "Computer Engineering";
+    String rNum = "12028797";
+    String AGE = "21";
 
     public  String checkValues(String userName,String password) throws SQLException {
 
@@ -32,12 +36,9 @@ public class LoginEntity {
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
 
-                    if (resultSet.getString(3).equalsIgnoreCase(tenant)) {
-                        role = tenant;
-                    } else if (resultSet.getString(3).equalsIgnoreCase(admin)) {
-                        role = admin;
-                    } else if (resultSet.getString(3).equalsIgnoreCase(owner)) {
-                        role = owner;
+                    if (resultSet.getString(3).equalsIgnoreCase(tenant)) {role = tenant;
+                    } else if (resultSet.getString(3).equalsIgnoreCase(admin)) {role = admin;
+                    } else if (resultSet.getString(3).equalsIgnoreCase(owner)) {role = owner;
                     }
                 }
                 resultSet.close();
@@ -69,8 +70,6 @@ public class LoginEntity {
 
     public boolean printTenant( String ffName, String mmName, String llName, String pPhone, String tenEmail, String tenUser, String tenPass) throws SQLException {
         Statement statement = null;
-        String mJor = "Computer Engineering";
-        String rNum = "12028797";
         try (Connection connection = DriverManager.getConnection(url, username1, password1)) {
             statement = connection.createStatement();
             String query3 = "insert into login (username, password, role) values ('" + tenUser + "','" + tenPass + "', '" + tenant + "')";

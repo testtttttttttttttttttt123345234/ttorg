@@ -5,11 +5,11 @@ import java.util.logging.Logger;
 
 public class Furniture {
 
-    public String picture;
-    public String description;
-    public String price;
-    public String id;
-    public String selled;
+     String picture;
+     String description;
+     String price;
+     String id;
+     String selled;
     String queryS = "Select * from forniture where username_tenant='";
     private static final Logger logger = Logger.getLogger(Furniture.class.getName());
     String host = "localhost";

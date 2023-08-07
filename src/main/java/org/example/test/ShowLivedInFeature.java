@@ -3,7 +3,7 @@ package org.example.test;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import productioncode.ShowLivedIn;
+import org.example.ShowLivedIn;
 
 import java.sql.SQLException;
 

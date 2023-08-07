@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/OwnerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/OwnerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Furniture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Furniture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HousingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HousingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LoginEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sakancomApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/BookingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/BookingFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/ControlPanelFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/ControlPanelFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/FurnitureFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/FurnitureFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/HousingFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/HousingFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test/ShowLivedInFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/test/ShowLivedInFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/LoginEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/LoginEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/BookingFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/BookingFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/ControlPanelFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/ControlPanelFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/FurnitureFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/FurnitureFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/HousingFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/HousingFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/test/ShowLivedInFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/test/ShowLivedInFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/ControlPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/Furniture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/HousingEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/productioncode/ShowLivedIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +128,7 @@
       <workItem from="1691309972746" duration="6372000" />
       <workItem from="1691346266298" duration="10405000" />
       <workItem from="1691360692278" duration="2024000" />
-      <workItem from="1691362744042" duration="357000" />
+      <workItem from="1691362744042" duration="4504000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1691166436997</created>
@@ -278,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691362839762</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Full project">
+      <created>1691363217821</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1691363217821</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +348,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/untitled4$All_in_untitled4.ic" NAME="All in untitled4 Coverage Results" MODIFIED="1691357096887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/untitled4$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1691357145911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/untitled4$AcceptanceTest.ic" NAME="AcceptanceTest Coverage Results" MODIFIED="1691390248819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

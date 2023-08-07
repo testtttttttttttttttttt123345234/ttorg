@@ -91,14 +91,10 @@ String wid="' where id='";
                 } catch (Exception ex) {logger.info("wrong input");}
                 if (flag1 == 1 ) {
 
-                    Statement statement1 = null;
                     Statement statement = null;
-                    Statement statement2 = null;
                     try (Connection connection = DriverManager.getConnection(url, username, password)) {
 
                         statement = connection.createStatement();
-                        statement1 = connection.createStatement();
-                        statement2 = connection.createStatement();
 
                         String query = "select * from housing where id='" + id + "'and available ='Yes'";
                         ResultSet res = statement.executeQuery(query);
@@ -111,24 +107,24 @@ String wid="' where id='";
                                 String n = Integer.toString(num);
                                 if (num == 4) {
                                     query = "update housing set peopleNum='" + n + "',available='No',tenant='" + userName + wid + id + "'";
-                                    statement1.executeUpdate(query);
+                                    statement.executeUpdate(query);
 
 
                                 } else {
                                     query = "update housing set peopleNum='" + n + "',tenant='" + userName + wid + id + "'";
-                                    statement1.executeUpdate(query);
+                                    statement.executeUpdate(query);
 
                                 }
                                 query = "insert into booking (tenantUserName,houseID,Owner) value ('" + userName + "','" + id + "','" + res.getString(6) + "')";
 
-                                statement1.executeUpdate(query);
+                                statement.executeUpdate(query);
                                 query = "insert into Tenants_Housing (tenantUserName,HouseID) value ('" + userName + "','" + id + "')";
-                                statement2.executeUpdate(query);
+                                statement.executeUpdate(query);
                                 rflag = true;
                             } else {
 
                                 query = "update housing set available='No',peopleNum='+" + num + "',tenant='" + userName + wid + id + "'";
-                                statement1.executeUpdate(query);
+                                statement.executeUpdate(query);
                                 rflag = true;
                             }
 
@@ -137,12 +133,8 @@ String wid="' where id='";
 
                         res.close();
                     } finally {
-                        assert statement1 != null;
                         assert statement != null;
-                        assert statement2 != null;
-                        statement1.close();
                         statement.close();
-                        statement2.close();
                     }
                 }
            return rflag;
