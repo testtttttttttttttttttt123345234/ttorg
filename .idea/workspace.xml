@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project v2">
+    <list default="true" id="ee83c034-5096-42fb-a64d-c63b1569be6a" name="Changes" comment="Full project v3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sakancomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sakancomapplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControlPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,7 @@
       <workItem from="1691309972746" duration="6372000" />
       <workItem from="1691346266298" duration="10405000" />
       <workItem from="1691360692278" duration="2024000" />
-      <workItem from="1691362744042" duration="7266000" />
+      <workItem from="1691362744042" duration="7726000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1691166436997</created>
@@ -300,7 +300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691391086853</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Full project v2">
+      <created>1691396574296</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1691396574296</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Full project v3">
+      <created>1691396841425</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1691396841425</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +355,8 @@
     <MESSAGE value="Full project" />
     <MESSAGE value="Full project v1" />
     <MESSAGE value="Full project v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full project v2" />
+    <MESSAGE value="Full project v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full project v3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/untitled4$All_in_untitled4.ic" NAME="All in untitled4 Coverage Results" MODIFIED="1691357096887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

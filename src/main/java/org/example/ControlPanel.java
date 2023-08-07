@@ -21,29 +21,21 @@ String select="Select * from booking where tenantUserName='";
 
             String query = "Select * from booking where tenantUserName='" + userName + "'";
             ResultSet res = statement.executeQuery(query);
-            while (res.next()) {
-                flag = true;
-            }
+            while (res.next()) {flag = true;}
             res.close();
         }
         finally {
             assert statement!=null;
-
             statement.close();
-
-        }
-        return flag;
+        }return flag;
     }
 
     public boolean displayTenantInfo(String userName) throws SQLException{
 boolean flag=false;
         if(isBooked(userName)) {
-
             Statement statement = null;
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
-
                 statement = connection.createStatement();
-
                 String query = "Select * from tenant where username='" + userName + "'";
                 ResultSet res = statement.executeQuery(query);
                 logger.info("Personal Information : ");
@@ -63,8 +55,6 @@ boolean flag=false;
                     logger.info("_____________________________________________");
                     flag = true;
                 }
-
-
                 res.close();
             } finally {
                 assert statement!=null;
@@ -84,11 +74,8 @@ boolean flag=false;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
 
             statement = connection.createStatement();
-
             String query = "Select * from owner where username='" + ownerName + "'";
-
             ResultSet re = statement.executeQuery(query);
-
             logger.info("Owner information:");
             while (re.next()) {
                 String ownerNamep = "Owner Name : " + re.getString(1) + " " + re.getString(2) + " " + re.getString(3);
@@ -99,20 +86,9 @@ boolean flag=false;
                 logger.info(age);
                 logger.info(phoneNumber);
                 logger.info(email);
-
                 flag = true;
-            }
-
-
-
-            re.close();
-
-        } finally {
-            assert statement!=null;
-            statement.close();
-        }
-
-        return flag;
+            }re.close();}finally {assert statement!=null;statement.close();
+        }return flag;
     }
 
     public String getOwnerName(String userName) throws SQLException {
@@ -120,20 +96,14 @@ boolean flag=false;
         String toReturn = "null";
         Statement statement = null;
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-
             statement = connection.createStatement();
-
             String query = select + userName + "'";
             ResultSet res = statement.executeQuery(query);
-            while (res.next()) {
-                toReturn = res.getString(3);
-            }
-
-
+            while (res.next()) {toReturn = res.getString(3);}
             res.close();
         } finally {
             assert statement!=null;
-                    statement.close();
+            statement.close();
         }
         return toReturn;
 
@@ -141,10 +111,8 @@ boolean flag=false;
 
         public String getHouseID(String userName) throws SQLException {
             String toReturn = "null";
-
             Statement statement = null;
             try (Connection connection = DriverManager.getConnection(url, username, password)) {
-
                 statement = connection.createStatement();
 
                 String query = select + userName + "'";
@@ -152,10 +120,6 @@ boolean flag=false;
                 while (res.next()) {
                     toReturn = res.getString(1);
                 }
-
-
-
-
                 res.close();
             } finally {
                 assert statement != null;
@@ -174,13 +138,8 @@ boolean flag=false;
 
                 String query = "Select * from housing where ID='" + id + "'";
                 ResultSet res = statement.executeQuery(query);
-                while (res.next()) {
-                    String rent = "Rent : " + res.getString(13);
-                    logger.info(rent);
-                    flag = true;
+                while (res.next()) {String rent = "Rent : " + res.getString(13);logger.info(rent);flag = true;
                 }
-
-
                 res.close();
             } finally {
                 assert statement != null;
