@@ -138,6 +138,7 @@ String wid="' where id='";
                 statement2.close();
                 statement.close();
                 res.close();
+                connection.close();
             } finally {
                 assert statement1 != null;
                 assert statement != null;
