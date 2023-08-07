@@ -8,7 +8,7 @@
     <artifactId>untitled4</artifactId>
     <version>1.0-SNAPSHOT</version>
 
--<properties>
+<properties>
 
 <!-- Set the Java version used by the compiler. -->
 
@@ -30,16 +30,16 @@
 </properties>
 
 
--<build>
+<build>
 
 
--<plugins>
+<plugins>
 
 <!-- The Surefire Plugin is needed to run JUnit 5 tests with Maven -->
 
 
 
--<plugin>
+<plugin>
 
 <artifactId>maven-surefire-plugin</artifactId>
 
