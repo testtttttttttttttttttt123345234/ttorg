@@ -4,9 +4,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class sakancomApplication {
-    private static final Logger logger = Logger.getLogger(sakancomApplication.class.getName());
+public class sakancomapplication {
+    private static final Logger logger = Logger.getLogger(sakancomapplication.class.getName());
 
+    private static final String value = "The Value:";
     public static void main(String[] args) throws SQLException {
         String line="_____________________________________________"+"\n";
         while(true){
@@ -14,13 +15,13 @@ public class sakancomApplication {
             logger.info("Choose from the following "+"\n");
             logger.info("1-Login"+"\n");
             logger.info("2-Signup"+"\n");
-            logger.info("The Value: "+"\n");
+            logger.info(value);
             Scanner input = new Scanner(System.in);
-            int LoginOrSignUp = 0;
-            LoginOrSignUp = input.nextInt();
+            int loginOrSignUp = 0;
+            loginOrSignUp = input.nextInt();
             logger.info(line);
 
-            if (LoginOrSignUp == 1) {
+            if (loginOrSignUp == 1) {
                 logger.info("\n******* Login Page *******\n");
                 LoginEntity in = new LoginEntity();
                 Scanner input1 = new Scanner(System.in);
@@ -39,7 +40,7 @@ public class sakancomApplication {
                         logger.info("2-Furniture"+"\n");
                         logger.info("3-Control Panel"+"\n");
                         logger.info("4-Logout"+"\n");
-                        logger.info("The Value: ");
+                        logger.info(value);
                         Scanner input2 = new Scanner(System.in);
                         int choose = input2.nextInt();
                         logger.info(line);
@@ -49,13 +50,12 @@ public class sakancomApplication {
                             if (avb > 1) {
                                 logger.info("do you want to book  accommodation? (Yes or No)"+"\n");
                                 Scanner inp = new Scanner(System.in);
-                                String YN = new String();
-                                YN = inp.nextLine();
-                                if (YN.equals("Yes")) {
+                                String yn = inp.nextLine();
+                                if (yn.equals("Yes")) {
                                     logger.info("Enter house ID: "+"\n");
                                     Scanner id = new Scanner(System.in);
-                                    String ID = id.nextLine();
-                                    e.booking(ID, in.userName);
+                                    String iD = id.nextLine();
+                                    e.booking(iD, in.userName);
                                 }
                             }
                         }
@@ -67,7 +67,7 @@ public class sakancomApplication {
                                 logger.info("2-Add Furniture's"+"\n");
                                 logger.info("3-Sell Furniture's"+"\n");
                                 logger.info("4-Back"+"\n");
-                                logger.info("The Value: ");
+                                logger.info(value);
                                 Scanner inp = new Scanner(System.in);
                                 int ch = inp.nextInt();
                                 logger.info(line);
@@ -77,7 +77,7 @@ public class sakancomApplication {
 
                                 } else if (ch == 2) {
                                     Scanner inp1 = new Scanner(System.in);
-                                    logger.info("Enter Picture: "+"\n");
+                                    logger.info("\nEnter Picture: "+"\n");
                                     o.picture = inp1.nextLine();
                                     logger.info("Enter Description: "+"\n");
                                     o.description = inp1.nextLine();
@@ -112,17 +112,17 @@ public class sakancomApplication {
                     logger.info("Choose from the following "+"\n");
                     logger.info("1-Housing "+"\n");
                     logger.info("2-Logout "+"\n");
-                    logger.info("The Value: ");
+                    logger.info(value);
                     Scanner i = new Scanner(System.in);
                     int inp = i.nextInt();
                     if (inp == 1) {
                         while (true) {
                             OwnerEntity obj = new OwnerEntity();
-                            logger.info("___________________Housing___________________"+"\n");
+                            logger.info("\n___________________Housing___________________"+"\n");
                             logger.info("1-Add Housing "+"\n");
                             logger.info("2-Show Housings "+"\n");
                             logger.info("3-Logout "+"\n");
-                            logger.info("The Value: ");
+                            logger.info(value);
                             Scanner inp1 = new Scanner(System.in);
                             int input2 = inp1.nextInt();
                             if (input2 == 1) {
@@ -130,7 +130,8 @@ public class sakancomApplication {
                                 logger.info("________________Add Housing________________"+"\n");
                                 logger.info("Enter Housing ID: ");
                                 obj.counter = inp3.nextLine();
-                                logger.info("\nEnter Owner username: '" + in.userName + "'\n");
+                                logger.info("\nEnter Owner username: ");
+                                logger.info(in.userName+"\n");
                                 obj.addHousing(in.userName);
                                 logger.info("Enter Department name: ");
                                 String depName = inp3.nextLine();
@@ -180,7 +181,7 @@ public class sakancomApplication {
                     logger.info("1-See pending Housings \n");
                     logger.info("2-See Reservations \n");
                     logger.info("3-Logout \n");
-                    logger.info("The Value:  ");
+                    logger.info(value);
                     Scanner inp1 = new Scanner(System.in);
                     int input2 = inp1.nextInt();
                     if (input2 == 1) {
@@ -214,12 +215,12 @@ public class sakancomApplication {
                     }
                 }
             }
-            else if (LoginOrSignUp==2) {
+            else if (loginOrSignUp==2) {
                 logger.info(line);
                 logger.info("Choose from the following \n");
                 logger.info("1-Owner\n");
                 logger.info("2-Tenant\n");
-                logger.info("The Value: ");
+                logger.info(value);
                 Scanner in = new Scanner(System.in);
                 int inp = in.nextInt();
                 if(inp == 1) {
@@ -232,21 +233,21 @@ public class sakancomApplication {
                     String mName = inp1.nextLine();
                     logger.info("\nPlease enter your Last name: ");
                     String lName = inp1.nextLine();
-                    logger.info("\nPlease enter your Phone number: ");
-                    String Phone = inp1.nextLine();
                     logger.info("\nPlease enter your Email: ");
                     String owEmail = inp1.nextLine();
                     logger.info("\nPlease enter your age: ");
                     obj.age = inp1.nextLine();
+                    logger.info("\nPlease enter your Phone number: ");
+                    String phone = inp1.nextLine();
                     logger.info("\nPlease enter your username: ");
                     String owUser = inp1.nextLine();
                     logger.info("\nPlease enter your password: ");
                     String owPass = inp1.nextLine();
                     logger.info("\nCreating Owner Account... \n");
-                    if (obj.printOwner(fName, mName, lName, Phone, owEmail, owUser, owPass)) {
+                    if (obj.printOwner(fName, mName, lName, phone, owEmail, owUser, owPass)) {
                         logger.info("Owner Account Created\n");
                     } else {
-                        System.out.println("Error! Creation Failed\n");
+                        logger.info("Error! Creation Failed\n");
                     }
                 }
                 else if(inp == 2)
@@ -261,7 +262,7 @@ public class sakancomApplication {
                     logger.info("\nPlease enter your Last name: ");
                     String lName = inp3.nextLine();
                     logger.info("\nPlease enter your Phone number: ");
-                    String Phone = inp3.nextLine();
+                    String phone = inp3.nextLine();
                     logger.info("\nPlease enter your Email: ");
                     String tenEmail = inp3.nextLine();
                     logger.info("\nPlease enter your age: ");
@@ -275,13 +276,14 @@ public class sakancomApplication {
                     logger.info("\nPlease enter your password: ");
                     ob.passWord = inp3.nextLine();
                     logger.info("Creating Tenant Account... \n");
-                    if(ob.printTenant(fName, mName, lName, Phone, tenEmail, ob.userName, ob.passWord)) {
+                    if(ob.printTenant(fName, mName, lName, phone, tenEmail, ob.userName, ob.passWord)) {
                         logger.info("Tenant Account Created\n");
                     }
                     else{
                         logger.info("Error! Creation Failed\n");
                     }
                 }
+                else {break;}
             }
         }
     }
